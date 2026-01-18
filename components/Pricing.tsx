@@ -7,66 +7,113 @@ export const Pricing: React.FC = () => {
        {/* Background Spinners */}
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl animate-pulse-slow -z-10"></div>
 
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-2xl mx-auto relative group">
-          
-          {/* Animated Border Gradient */}
-          <div className="absolute -inset-[2px] rounded-[42px] bg-gradient-to-r from-primary via-secondary to-primary opacity-70 blur-sm group-hover:opacity-100 transition-opacity duration-500 animate-spin-slow"></div>
-          
-          <div className="relative bg-[#0A0E27]/90 backdrop-blur-xl rounded-[40px] p-6 md:p-12 overflow-hidden">
-             
-             {/* Badge */}
-             <div className="flex justify-center mb-6 md:mb-8">
-               <span className="px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold uppercase tracking-wider text-xs md:text-sm shadow-[0_4px_20px_rgba(255,100,100,0.4)] animate-pulse text-center">
-                 🔥 Старт 17 Января
-               </span>
-             </div>
-
-             <div className="text-center mb-6 md:mb-8">
-               <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">AI Minds Базовый</h3>
-               <p className="text-gray-400 text-sm md:text-base">Полное погружение в мир AI</p>
-             </div>
-
-             <div className="text-center mb-8 md:mb-10">
-               <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-white">
-                 <span className="text-6xl md:text-8xl font-black font-display tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-400">20</span>
-                 <div className="flex flex-row md:flex-col items-baseline md:items-start gap-2 md:gap-0 md:mt-4">
-                    <span className="text-3xl md:text-4xl font-bold text-primary">000₸</span>
-                    <span className="text-gray-500 text-xs md:text-sm uppercase tracking-widest">за курс</span>
-                 </div>
-               </div>
-             </div>
-
-             <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
-               {[
-                 "8 онлайн-уроков",
-                 "2 занятия в неделю (Сб, Вс)",
-                 "Практика в ChatGPT и Midjourney",
-                 "Создание своего AI-проекта",
-                 "Сертификат по окончанию",
-                 "Поддержка в чате 24/7"
-               ].map((feature, i) => (
-                 <div key={i} className="flex items-start gap-4 text-gray-200 border-b border-white/5 pb-3 last:border-0">
-                   <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 text-white font-bold text-xs md:text-sm mt-0.5">✓</div>
-                   <span className="text-base md:text-lg leading-tight">{feature}</span>
-                 </div>
-               ))}
-             </div>
-
-             <div className="text-center mb-6 md:mb-8 p-3 md:p-4 bg-primary/10 rounded-xl border border-primary/20">
-               <p className="text-primary font-bold animate-pulse text-sm md:text-base">⚡ Осталось только 5 мест</p>
-             </div>
-
-             <a href={`${WHATSAPP_LINK}?text=Хочу записать ребенка на поток 17 января!`} className="block w-full py-4 md:py-5 rounded-2xl bg-gradient-cta text-white font-black text-lg md:text-xl text-center uppercase tracking-wide hover:shadow-[0_10px_50px_rgba(0,229,255,0.4)] transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn">
-               <span className="relative z-10">Записаться в WhatsApp →</span>
-               <div className="absolute inset-0 bg-white/30 transform -skew-x-12 translate-x-[-120%] group-hover/btn:translate-x-[120%] transition-transform duration-700 ease-in-out"></div>
-             </a>
-
-             <p className="text-center text-gray-500 text-xs md:text-sm mt-6">
-               🛡️ Гарантия возврата денег в первую неделю
-             </p>
-          </div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-16">
+           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Тарифы обучения</h2>
+           <p className="text-gray-400">Выберите формат, который подходит вашему ребенку</p>
         </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          
+          {/* Card 1: Online Basic */}
+          <div className="relative group">
+             <div className="absolute -inset-[2px] rounded-[42px] bg-gradient-to-r from-primary/30 to-blue-600/30 opacity-70 blur-sm group-hover:opacity-100 transition-opacity duration-500"></div>
+             <div className="relative bg-[#0A0E27]/90 backdrop-blur-xl rounded-[40px] p-8 md:p-12 overflow-hidden h-full border border-white/5 flex flex-col">
+                 <div className="mb-6">
+                   <h3 className="text-2xl font-display font-bold text-white mb-2">AI Minds Online</h3>
+                   <p className="text-gray-400 text-sm">Базовый формат обучения</p>
+                 </div>
+
+                 <div className="mb-8">
+                   <div className="flex items-baseline gap-2 text-white">
+                     <span className="text-5xl font-black font-display tracking-tight">20 000₸</span>
+                     <span className="text-gray-500 text-sm uppercase tracking-widest">/ курс</span>
+                   </div>
+                 </div>
+
+                 <div className="space-y-4 mb-10 flex-grow">
+                   {[
+                     "8 онлайн-уроков (Zoom)",
+                     "2 занятия в неделю (Сб, Вс)",
+                     "Практика в ChatGPT и Midjourney",
+                     "Создание своего AI-бота",
+                     "Сертификат по окончанию",
+                     "Общий чат учеников"
+                   ].map((feature, i) => (
+                     <div key={i} className="flex items-start gap-3 text-gray-200">
+                       <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-bold text-xs mt-0.5">✓</div>
+                       <span className="text-base leading-tight">{feature}</span>
+                     </div>
+                   ))}
+                 </div>
+
+                 <div className="mt-auto">
+                    <div className="text-center mb-4 p-2 rounded-lg bg-white/5 border border-white/5 text-sm text-gray-400">
+                      Старт 21 Февраля
+                    </div>
+                    <a href={`${WHATSAPP_LINK}?text=Здравствуйте, хочу записать ребенка на тариф Online (20 000тг)`} className="block w-full py-4 rounded-xl border border-primary text-primary font-bold text-center uppercase tracking-wide hover:bg-primary hover:text-darker transition-all">
+                       Записаться Online
+                    </a>
+                 </div>
+             </div>
+          </div>
+
+          {/* Card 2: Offline Mentorship (Premium) */}
+          <div className="relative group transform lg:-translate-y-4">
+             {/* Animated Gradient Border */}
+             <div className="absolute -inset-[2px] rounded-[42px] bg-gradient-to-r from-secondary via-pink-500 to-secondary opacity-100 blur-md animate-spin-slow"></div>
+             
+             <div className="relative bg-[#0A0E27] rounded-[40px] p-8 md:p-12 overflow-hidden h-full flex flex-col">
+                 
+                 <div className="absolute top-0 right-0 bg-gradient-to-bl from-secondary to-pink-600 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl uppercase tracking-wider">
+                    Рекомендуем
+                 </div>
+
+                 <div className="mb-6">
+                   <h3 className="text-2xl font-display font-bold text-white mb-2">Mentorship Offline</h3>
+                   <p className="text-secondary text-sm font-bold">Полное погружение в офисе</p>
+                 </div>
+
+                 <div className="mb-8">
+                   <div className="flex items-baseline gap-2 text-white">
+                     <span className="text-5xl font-black font-display tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary">50 000₸</span>
+                     <span className="text-gray-500 text-sm uppercase tracking-widest">/ курс</span>
+                   </div>
+                 </div>
+
+                 <div className="space-y-4 mb-10 flex-grow">
+                   {[
+                     "Все преимущества Online тарифа",
+                     "Живые встречи в офисе (Алматы)",
+                     "Индивидуальное менторство",
+                     "Создание стартапа с нуля",
+                     "Подготовка презентации (Pitch Deck)",
+                     "Участие в IT-конкурсах",
+                     "Фирменный мерч AI Minds"
+                   ].map((feature, i) => (
+                     <div key={i} className="flex items-start gap-3 text-white">
+                       <div className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-white font-bold text-xs mt-0.5">★</div>
+                       <span className="text-base leading-tight font-medium">{feature}</span>
+                     </div>
+                   ))}
+                 </div>
+
+                 <div className="mt-auto">
+                    <div className="text-center mb-4 p-2 rounded-lg bg-secondary/10 border border-secondary/20 text-sm text-secondary font-bold animate-pulse">
+                      🔥 Осталось всего 3 места
+                    </div>
+                    <a href={`${WHATSAPP_LINK}?text=Здравствуйте, хочу записать ребенка на тариф Mentorship Offline (50 000тг)`} className="block w-full py-4 rounded-xl bg-gradient-to-r from-secondary to-pink-600 text-white font-bold text-center uppercase tracking-wide shadow-lg hover:shadow-secondary/50 hover:scale-[1.02] transition-all">
+                       Записаться на Менторство
+                    </a>
+                 </div>
+             </div>
+          </div>
+
+        </div>
+
+        <p className="text-center text-gray-500 text-xs md:text-sm mt-12">
+          🛡️ Гарантия возврата денег в первую неделю обучения
+        </p>
       </div>
     </section>
   );

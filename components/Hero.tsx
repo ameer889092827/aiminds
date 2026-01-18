@@ -3,7 +3,7 @@ import { WHATSAPP_LINK } from '../constants';
 
 export const Hero: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = "Научим твоего ребенка создавать AI за месяц";
+  const fullText = "Научим вашего ребенка создавать AI за месяц";
 
   useEffect(() => {
     let i = 0;
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
         {/* Content */}
         <div className="space-y-6 md:space-y-8 text-center lg:text-left">
           <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs md:text-sm font-bold tracking-wider uppercase animate-fade-in mb-2 md:mb-4">
-            🚀 Старт потока: 17 Января
+            🚀 Старт потока: 21 Февраля
           </div>
           
           <div className="min-h-[120px] md:min-h-[auto]">
@@ -41,8 +41,8 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <a href={`${WHATSAPP_LINK}?text=Хочу записаться на поток 17 января!`} className="relative group overflow-hidden px-8 py-4 rounded-xl bg-gradient-cta font-bold text-white shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_40px_rgba(176,38,255,0.6)] transition-all duration-300 transform hover:-translate-y-1">
-              <span className="relative z-10">Записаться на Январь →</span>
+            <a href={`${WHATSAPP_LINK}?text=Хочу записать ребенка на поток 21 февраля!`} className="relative group overflow-hidden px-8 py-4 rounded-xl bg-gradient-cta font-bold text-white shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_40px_rgba(176,38,255,0.6)] transition-all duration-300 transform hover:-translate-y-1">
+              <span className="relative z-10">Записаться на Февраль →</span>
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </a>
             
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
 
           <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-            <span>Осталось <span className="text-white font-bold">5 мест</span> в этой группе</span>
+            <span>Осталось <span className="text-white font-bold">5 мест</span> в группе</span>
           </div>
         </div>
 

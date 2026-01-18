@@ -21,11 +21,11 @@ const FinalCTA: React.FC = () => {
         
         <div className="relative z-10 p-12 md:p-24 text-center">
           <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-            Готов к будущему?
+            Готовы к будущему?
           </h2>
           <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-             Пока другие дети играют в игры, твой ребенок будет создавать AI. 
-             Январский поток стартует 17-го числа!
+             Пока другие дети играют в игры, ваш ребенок будет создавать AI. 
+             Февральский поток стартует 21-го числа!
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-6 items-center mb-12">
@@ -34,12 +34,12 @@ const FinalCTA: React.FC = () => {
               <span className="text-xs uppercase tracking-widest text-white">мест осталось</span>
             </div>
             <div className="flex flex-col items-center bg-white/10 backdrop-blur rounded-xl p-4 min-w-[120px]">
-              <span className="text-4xl font-bold text-secondary">17</span>
-              <span className="text-xs uppercase tracking-widest text-white">января старт</span>
+              <span className="text-4xl font-bold text-secondary">21</span>
+              <span className="text-xs uppercase tracking-widest text-white">февраля старт</span>
             </div>
           </div>
 
-          <a href={`${WHATSAPP_LINK}?text=Записываюсь на курс 17 января!`} className="inline-block px-12 py-6 rounded-full bg-white text-indigo-900 font-black text-xl hover:scale-105 transition-transform shadow-xl">
+          <a href={`${WHATSAPP_LINK}?text=Записываюсь на курс 21 февраля!`} className="inline-block px-12 py-6 rounded-full bg-white text-indigo-900 font-black text-xl hover:scale-105 transition-transform shadow-xl">
             Записаться Сейчас 🚀
           </a>
         </div>

@@ -85,10 +85,10 @@ export const Team: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Твои наставники
+            Наставники курса
           </h2>
           <p className="text-gray-400 text-lg">
-            Молодые эксперты, которые говорят на твоем языке
+            Молодые эксперты, которые говорят на одном языке с учениками
           </p>
         </div>
 
