@@ -86,10 +86,9 @@ export const Pricing: React.FC = () => {
                      "Все преимущества Online тарифа",
                      "Живые встречи в офисе (Алматы)",
                      "Индивидуальное менторство",
-                     "Создание стартапа с нуля",
+                     "Создание стартапа с нуля с менторами",
                      "Подготовка презентации (Pitch Deck)",
-                     "Участие в IT-конкурсах",
-                     "Фирменный мерч AI Minds"
+                     "Участие в IT-конкурсах"
                    ].map((feature, i) => (
                      <div key={i} className="flex items-start gap-3 text-white">
                        <div className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-white font-bold text-xs mt-0.5">★</div>
