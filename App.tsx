@@ -10,7 +10,7 @@ import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { CursorTrail, ParticleBackground, FloatingWhatsApp } from './components/FloatingElements';
 import { WHATSAPP_LINK } from './constants';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const FinalCTA: React.FC = () => {
   return (
