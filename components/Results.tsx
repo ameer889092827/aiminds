@@ -1,34 +1,57 @@
 import React from 'react';
-import { RESULTS_DATA } from '../constants';
+import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export const Results: React.FC = () => {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      id: 1,
+      student: t('results.proj1_student'),
+      title: t('results.proj1_title'),
+      desc: t('results.proj1_desc'),
+      image: 'https://image2url.com/r2/default/images/1775300033726-917fa8eb-c5fd-4ce1-8f72-b70da0852980.png'
+    },
+    {
+      id: 2,
+      student: t('results.proj2_student'),
+      title: t('results.proj2_title'),
+      desc: t('results.proj2_desc'),
+      image: 'https://image2url.com/r2/default/images/1775300199890-abfbe531-c435-4617-b406-7e321f18253b.png'
+    }
+  ];
+
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-6">
+    <section className="py-24 px-6 bg-light" id="results">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Проекты учеников
+          <h2 className="text-3xl md:text-5xl font-bold text-dark mb-6">
+            {t('results.title')}
           </h2>
-          <p className="text-gray-400 text-lg">Реальные результаты после 1 месяца обучения</p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {t('results.desc')}
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {RESULTS_DATA.map((item) => (
-            <div key={item.id} className="group rounded-2xl bg-white/5 border border-white/10 overflow-hidden hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,229,255,0.2)]">
-              <div className="relative h-48 overflow-hidden">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-black/80 backdrop-blur border border-primary text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">
-                    {item.type}
-                  </span>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {projects.map((item) => (
+            <motion.div 
+              key={item.id} 
+              whileHover={{ y: -8 }}
+              className="group rounded-3xl bg-white border border-gray-100 overflow-hidden shadow-soft hover:shadow-hover transition-all flex flex-col"
+            >
+              <div className="relative h-64 overflow-hidden bg-gray-100">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+              </div>
+              <div className="p-8 flex-grow flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-sm font-bold text-primary bg-blue-50 px-3 py-1 rounded-full">{item.student}</span>
                 </div>
+                <h4 className="text-xl font-bold text-dark mb-3">{item.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow">{item.desc}</p>
               </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold font-display mb-1 text-white">{item.title}</h4>
-                <p className="text-sm text-primary mb-3">{item.student}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

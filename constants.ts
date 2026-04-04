@@ -1,5 +1,6 @@
 export const WHATSAPP_NUMBER = "77784546148";
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6ILhIxe6Ibgu2mOb485_17eodqA_vWDSu9wUZ6Lo-f4txUMYPYtZqXmCEj5S4nj2xZg/exec";
 
 export const CURRICULUM_MODULES = [
   {

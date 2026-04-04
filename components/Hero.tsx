@@ -1,83 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { WHATSAPP_LINK } from '../constants';
+import { motion } from 'motion/react';
+import { Gift } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Hero: React.FC = () => {
-  const [text, setText] = useState('');
-  const fullText = "Научим вашего ребенка создавать AI за месяц";
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setText(fullText.slice(0, i + 1));
-      i++;
-      if (i > fullText.length) clearInterval(interval);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
+  const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 blur-[80px] md:blur-[120px] rounded-full animate-pulse-slow"></div>
-      <div className="absolute bottom-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-secondary/20 blur-[60px] md:blur-[100px] rounded-full animate-pulse-slow delay-1000"></div>
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-[#F8F9FA]">
+      {/* Subtle Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-100/50 blur-[100px]"></div>
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 relative z-10 max-w-4xl flex flex-col items-center">
         
         {/* Content */}
-        <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-          <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs md:text-sm font-bold tracking-wider uppercase animate-fade-in mb-2 md:mb-4">
-            🚀 Старт потока: 21 Февраля
-          </div>
+        <div className="space-y-8 text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#1A202C]"
+          >
+            {t('hero.title1')}<span className="text-primary">{t('hero.title2')}</span>{t('hero.title3')}
+          </motion.h1>
           
-          <div className="min-h-[120px] md:min-h-[auto]">
-            <h1 className="font-display text-3xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-primary to-secondary break-words">
-               {text}<span className="animate-pulse text-primary">|</span>
-            </h1>
-          </div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-[#4A5568] max-w-2xl mx-auto leading-relaxed"
+          >
+            {t('hero.subtitle')}
+          </motion.p>
           
-          <p className="font-sans text-base md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Онлайн-курс по искусственному интеллекту для детей 10-16 лет. 
-            От основ до собственного проекта всего за <span className="text-white font-bold">20,000₸</span>.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <a href={`${WHATSAPP_LINK}?text=Хочу записать ребенка на поток 21 февраля!`} className="relative group overflow-hidden px-8 py-4 rounded-xl bg-gradient-cta font-bold text-white shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_40px_rgba(176,38,255,0.6)] transition-all duration-300 transform hover:-translate-y-1">
-              <span className="relative z-10">Записаться на Февраль →</span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center pt-4 items-center"
+          >
+            <a href={`${WHATSAPP_LINK}?text=Хочу записать ребенка на пробный урок!`} className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold hover:from-orange-500 hover:to-orange-600 transition-all shadow-lg shadow-orange-500/30 text-center whitespace-nowrap">
+              {t('hero.cta')}
             </a>
             
-            <a href="#program" className="px-8 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md font-bold text-white hover:bg-white/10 transition-all duration-300">
-              Узнать программу
-            </a>
-          </div>
-
-          <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-            <span>Осталось <span className="text-white font-bold">5 мест</span> в группе</span>
-          </div>
-        </div>
-
-        {/* 3D Visual */}
-        <div className="hidden lg:block relative perspective-1000 group">
-          <div className="relative w-full aspect-square transform-style-3d transition-transform duration-500 hover:rotate-y-12 hover:rotate-x-12">
-            <div className="absolute inset-0 bg-gradient-card rounded-3xl border border-primary/20 backdrop-blur-xl flex items-center justify-center shadow-2xl animate-float">
-                {/* Simulated AI Brain Visual */}
-                <div className="relative w-64 h-64">
-                   <div className="absolute inset-0 border-4 border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                   <div className="absolute inset-4 border-4 border-secondary/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-                   <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-6xl">🧠</span>
-                   </div>
-                   {/* Floating code snippets */}
-                   <div className="absolute -top-10 -right-10 bg-dark/80 backdrop-blur border border-primary/40 p-3 rounded-lg text-xs font-mono text-primary shadow-lg animate-bounce">
-                      import torch
-                   </div>
-                   <div className="absolute -bottom-5 -left-10 bg-dark/80 backdrop-blur border border-secondary/40 p-3 rounded-lg text-xs font-mono text-secondary shadow-lg animate-bounce delay-700">
-                      model.train()
-                   </div>
-                </div>
+            <div className="flex items-center gap-4 max-w-xs text-left">
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <Gift className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-sm text-[#4A5568] leading-tight">
+                <span className="font-bold text-[#1A202C]">{t('hero.gift_title')}</span> {t('hero.gift_desc')}
+              </p>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Trust Badges */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 max-w-3xl mx-auto"
+          >
+            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center">
+              <div className="text-3xl font-extrabold text-primary mb-1">{t('hero.stat1_val')}</div>
+              <div className="text-xs text-[#4A5568] leading-tight">{t('hero.stat1_desc')}</div>
+            </div>
+            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center">
+              <div className="text-3xl font-extrabold text-primary mb-1">{t('hero.stat2_val')}</div>
+              <div className="text-xs text-[#4A5568] leading-tight">{t('hero.stat2_desc')}</div>
+            </div>
+            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center">
+              <div className="text-3xl font-extrabold text-primary mb-1">{t('hero.stat3_val')}</div>
+              <div className="text-xs text-[#4A5568] leading-tight">{t('hero.stat3_desc')}</div>
+            </div>
+          </motion.div>
         </div>
 
       </div>

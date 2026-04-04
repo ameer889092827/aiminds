@@ -1,54 +1,22 @@
 import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { SocialProof } from './components/SocialProof';
-import { Curriculum } from './components/Curriculum';
-import { Team } from './components/Team';
+import { Courses } from './components/Courses';
 import { Results } from './components/Results';
-import { Pricing } from './components/Pricing';
+import { LeadMagnet } from './components/LeadMagnet';
+import { Team } from './components/Team';
+import { SocialProof } from './components/SocialProof';
+import { Formats } from './components/Formats';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
-import { CursorTrail, ParticleBackground, FloatingWhatsApp } from './components/FloatingElements';
-import { WHATSAPP_LINK } from './constants';
+import { FloatingWhatsApp } from './components/FloatingElements';
+import { PopupModal } from './components/PopupModal';
 import { Analytics } from '@vercel/analytics/react';
-
-const FinalCTA: React.FC = () => {
-  return (
-    <section className="py-24 px-6">
-      <div className="container mx-auto rounded-[3rem] bg-gradient-to-br from-indigo-900 to-purple-900 overflow-hidden relative border border-white/20 shadow-2xl">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 blur-[100px] rounded-full"></div>
-        
-        <div className="relative z-10 p-12 md:p-24 text-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-            Готовы к будущему?
-          </h2>
-          <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-             Пока другие дети играют в игры, ваш ребенок будет создавать AI. 
-             Февральский поток стартует 21-го числа!
-          </p>
-
-          <div className="flex flex-col md:flex-row justify-center gap-6 items-center mb-12">
-            <div className="flex flex-col items-center bg-white/10 backdrop-blur rounded-xl p-4 min-w-[120px]">
-              <span className="text-4xl font-bold text-primary">5</span>
-              <span className="text-xs uppercase tracking-widest text-white">мест осталось</span>
-            </div>
-            <div className="flex flex-col items-center bg-white/10 backdrop-blur rounded-xl p-4 min-w-[120px]">
-              <span className="text-4xl font-bold text-secondary">21</span>
-              <span className="text-xs uppercase tracking-widest text-white">февраля старт</span>
-            </div>
-          </div>
-
-          <a href={`${WHATSAPP_LINK}?text=Записываюсь на курс 21 февраля!`} className="inline-block px-12 py-6 rounded-full bg-white text-indigo-900 font-black text-xl hover:scale-105 transition-transform shadow-xl">
-            Записаться Сейчас 🚀
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
+import { useTranslation } from 'react-i18next';
 
 const App: React.FC = () => {
+  const { t } = useTranslation();
+
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -61,7 +29,7 @@ const App: React.FC = () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('section > div').forEach(el => {
-      el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+      el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
       observer.observe(el);
     });
 
@@ -69,24 +37,28 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="font-sans text-white bg-darker min-h-screen selection:bg-primary selection:text-darker">
-      <ParticleBackground />
-      <CursorTrail />
+    <div className="font-sans text-dark bg-light min-h-screen selection:bg-primary/20 selection:text-primary">
       <Navbar />
       
       <main>
         <Hero />
-        <SocialProof />
-        <Curriculum />
-        <Team />
+        <Courses />
         <Results />
-        <Pricing />
+        <LeadMagnet />
+        <Team />
+        <SocialProof />
+        <Formats />
         <FAQ />
-        <FinalCTA />
+        <LeadMagnet 
+          title={<>{t('lead.title2')}<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">{t('lead.title2_highlight')}</span>{t('lead.title2_end')}</>}
+          formTitle={t('lead.form_title2')}
+          buttonText={t('lead.btn2')}
+        />
       </main>
 
       <Footer />
       <FloatingWhatsApp />
+      <PopupModal />
       <Analytics />
     </div>
   );

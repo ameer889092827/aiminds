@@ -1,19 +1,48 @@
 import React from 'react';
-import { CURRICULUM_MODULES } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 export const Curriculum: React.FC = () => {
+  const { t } = useTranslation();
+
+  const modules = [
+    {
+      id: 1,
+      title: t('curriculum.step1_title'),
+      desc: t('curriculum.step1_desc'),
+      weeks: "Неделя 1"
+    },
+    {
+      id: 2,
+      title: t('curriculum.step2_title'),
+      desc: t('curriculum.step2_desc'),
+      weeks: "Неделя 2"
+    },
+    {
+      id: 3,
+      title: t('curriculum.step3_title'),
+      desc: t('curriculum.step3_desc'),
+      weeks: "Неделя 3"
+    },
+    {
+      id: 4,
+      title: t('curriculum.step4_title'),
+      desc: t('curriculum.step4_desc'),
+      weeks: "Неделя 4"
+    }
+  ];
+
   return (
     <section id="program" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Что освоит ваш ребенок
+            {t('curriculum.title')}
           </h2>
-          <p className="text-gray-400 text-lg">8 практических занятий по выходным</p>
+          <p className="text-gray-400 text-lg">{t('curriculum.desc')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {CURRICULUM_MODULES.map((module) => (
+          {modules.map((module) => (
             <div key={module.id} className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
               {/* Hover Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
