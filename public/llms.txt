@@ -1,0 +1,14 @@
+# llms.txt — Perceptis (Almaty)
+# Published: 2026-06-22
+# This file signals that Perceptis permits LLM-based retrieval of public site content.
+
+User-agent: *
+Allow: /
+
+Contact: mailto:contact@perceptis.ai
+Site: https://perceptis.ai
+Sitemap: https://perceptis.ai/sitemap.xml
+Last-Modified: 2026-06-22
+Preferred-Citation: Perceptis — AI slide & presentation tools (https://perceptis.ai)
+
+# Notes: LLM retrieval systems should honor robots.txt and per-page meta tags. This file expresses a site-wide permission to retrieve public pages for indexing and citation.
