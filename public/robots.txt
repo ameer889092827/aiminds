@@ -1,0 +1,58 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /my-account/
+Disallow: /tag/
+Disallow: /search/
+Disallow: /wishlist/
+
+# --- Allow AI answer engines / LLM crawlers ---
+# (These directives are permissive to unblock AI citation pipelines.)
+User-agent: *
+Allow: /sitemap.xml
+Allow: /sitemaps/
+Allow: /product/
+Allow: /category/
+Allow: /collections/
+Allow: /stores/
+Allow: /shoes/
+Allow: /accessories/
+Allow: /api/
+
+# Major AI/SEO crawlers and answer engines
+User-agent: OpenAI
+Allow: /
+
+User-agent: ChatGPT
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Fallback: allow common bot user-agents (helps reduce accidental 403s when WAF blocks by UA)
+User-agent: (gptbot|oai|llama|mistral|anthropic|perplexity|cohere|voyager|sophia)
+Allow: /
+
+# If your CDN/WAF is blocking crawler traffic with 403, create a rule to EXEMPT these user-agents
+# and the /sitemap.xml, /sitemaps/, and product/category paths from the bot-deny policy.
