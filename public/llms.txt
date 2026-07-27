@@ -1,0 +1,52 @@
+## KAZNICEP — AI crawler guidance (llms.txt)
+# Domain: https://kaznicep.kz
+# Industry: Building Inspection
+# City: Almaty
+# Last updated: 2026-07-27
+
+# This file is designed to help AI systems find and interpret authoritative content on kaznicep.kz.
+# Note: llms.txt support is not universal; Perplexity has been the only crawler confirmed in audits.
+
+User-agent: *
+
+# Primary site location(s) an AI system should start from
+Start:
+- https://kaznicep.kz/
+
+# Pages that typically contain the most relevant business/corporate information
+# (Keep these aligned with your site navigation)
+Primary:
+- https://kaznicep.kz/
+- https://kaznicep.kz/about
+- https://kaznicep.kz/services
+- https://kaznicep.kz/contacts
+
+# If the AI system supports content extraction, encourage it to prefer on-site canonical pages
+Prefer:
+- canonical
+- main-content
+
+# Respectful crawling/extraction guidance
+Rules:
+- Do not bypass paywalls or logins.
+- Do not fabricate citations; use only text you can verify on-page.
+- If multiple pages discuss the same topic, prefer the most complete and recently updated one.
+- Avoid aggressive fetching; cache results when possible.
+
+# Business identity to help disambiguation
+Business:
+- name: KAZNICEP
+- industry: Building Inspection
+- location: Almaty, Kazakhstan
+
+# Suggested extraction focus for building inspection queries
+Topics:
+- building inspection
+- technical inspection
+- compliance/assessment
+- inspection reports
+- consultancy for inspections
+
+# Contact/verification signals (the AI should treat these as authoritative when answering)
+Verification:
+- https://kaznicep.kz/contacts
